@@ -28,12 +28,29 @@ const items = [
 const Main = () => {
     const [clips, setClips] = useState([]);
     const [displays, setDisplays] = useState([]);
+    const [winners, setWinners] = useState([]);
     useEffect(() => {
         items.sort(() => Math.random() - 0.5);
         setClips(items);
         setDisplays([items[0], items[1]]);
-        console.log(items);
     }, [])
+
+    const clickHandler = (clip) => () => {
+        if(clips.length <= 2) {
+            if(winners.length === 0) {
+                setDisplays([clip])
+            } else {
+                let updatedClip = [...winners, clip];
+                setClips(updatedClip);
+                setDisplays([updatedClip[0], updatedClip[1]]);
+                setWinners([]);
+            }
+        } else if(clips.length > 2) {
+            setWinners([...winners, clip])
+            setDisplays([clips[2], clips[3]])
+            setClips(clips.slice(2))
+        }
+    }
 
     return (
         <FlexBox>
@@ -41,7 +58,7 @@ const Main = () => {
                 return (
                 <SelectArea className="flex-1" key={item.name}>
                     {item.src}
-                    <SelectBtn>{item.name}</SelectBtn>
+                    <SelectBtn onClick={clickHandler(item)}>{item.name}</SelectBtn>
                 </SelectArea>
                 )
             })}
