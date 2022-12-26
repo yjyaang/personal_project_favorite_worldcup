@@ -1,6 +1,10 @@
 import React from "react";
+import "./App.css";
 import { createGlobalStyle } from "styled-components"
-import Start from './Start';
+import Start from './components/Start';
+import Main from './components/Main';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import GmarketSansMedium from './styles/fonts/GmarketSansMedium.woff';
 
 const GlobalStyle = createGlobalStyle`
   margin: 0;
@@ -10,11 +14,14 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <GlobalStyle />
       <div>App</div>
-      <Start />
-    </>
+      <Routes>
+        <Route path="/" element={<Start />} />
+        <Route path="/main" element={<Main />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
