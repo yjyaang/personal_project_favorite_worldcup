@@ -1,12 +1,20 @@
 import React from "react";
-import Main from './Main';
+import { createGlobalStyle } from "styled-components"
+import Start from './Start';
+
+const GlobalStyle = createGlobalStyle`
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+`
 
 function App() {
   return (
-    <div>
-      <div >App</div>
-      <Main />
-    </div>
+    <>
+      <GlobalStyle />
+      <div>App</div>
+      <Start />
+    </>
   );
 }
 
