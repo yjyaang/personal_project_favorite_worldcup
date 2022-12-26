@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { createGlobalStyle } from "styled-components"
 import Start from './components/Start';
-import Main from './components/Main';
+import Main from './components/Main/Main';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import GmarketSansMedium from './styles/fonts/GmarketSansMedium.woff';
 
