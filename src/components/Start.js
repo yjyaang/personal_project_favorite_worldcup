@@ -35,7 +35,7 @@ const Start = () => {
     return (
         <StartContainer>
             <StartTitle>카트라이더 리그 명장면 월드컵</StartTitle>
-            <StartMain>당신이 생각하는 최고의 명장면에 투표해 주세요!</StartMain>
+            <StartMain>당신이 생각하는 최고의 명장면에 투표해 주세요!!</StartMain>
             <Link to="/main"><StartBtn>Start</StartBtn></Link>
         </StartContainer>
     )
