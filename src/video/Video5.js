@@ -7,7 +7,7 @@ const Video5 = () => {
     return (
         <YouTube
         //videoId : https://www.youtube.com/watch?v={videoId} 유튜브 링크의 끝부분에 있는 고유한 아이디
-        videoId="G4E9PURzzKE"
+        videoId="G4E9PURzzKEi"
         //opts(옵션들): 플레이어의 크기나 다양한 플레이어 매개 변수를 사용할 수 있음.
         opts={{
             width: "720",
